@@ -1,0 +1,21 @@
+name: concurrency demo
+on: [push] # Triggers the workflow on every push to the repository
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Job name
+  say-hello:
+    runs-on: ubuntu-latest # Github hosted runners
+    steps:
+      - name: main branch
+        if: github.ref_name == 'main'
+        run: echo "This one executes if branch is main" # The command to execute
+
+      - name: feature branch
+        if: github.ref_name == 'feature-*'
+        run:  |
+          sleep 30
+          echo "This one executes if branch is feature" # The command to execute
