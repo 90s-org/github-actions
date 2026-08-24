@@ -13,8 +13,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed
     steps:
       # Step 1: Print a basic greeting
-      - name: Run Hello World
-        run: echo "Hello, World!"
+      - name: Print full event payload
+        run: cat $GITHUB_EVENT_PATH | jq .
 
       # Step 2: Print an environment variable
       - name: Run Custom Message
