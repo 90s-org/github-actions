@@ -1,0 +1,19 @@
+name: Hello Action
+on: workflow_dispatch
+
+
+jobs:
+  # Job name
+  say-hello:
+    runs-on: ubuntu-latest # Github hosted runners
+    steps:
+      - name: Greet the world
+        id: greet
+        uses: 90s-org/workflows/.github/actions/gm@main
+        with:
+          person: 'Sivakumar'
+      
+      # - run: echo random-number "$RANDOM_NUMBER"
+      #   shell: bash
+      #   env:
+      #     RANDOM_NUMBER: ${{ steps.greet.outputs.random-number }}
