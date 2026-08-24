@@ -35,8 +35,8 @@ jobs:
     steps:
       # Step 1: Print a basic greeting
       - name: Run Hello World
-        run: echo "Hello, World!"
+        run: echo "${{ inputs.print_tags }} "
 
       # Step 2: Print an environment variable
       - name: Run Custom Message
-        run: echo "GitHub Actions is working perfectly!"
+        run: echo "${{ inputs.environment }} "
