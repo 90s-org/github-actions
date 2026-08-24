@@ -21,3 +21,13 @@ jobs:
         run: |
           echo '${{ toJson(github) }}' | jq .
           echo "branch name: ${{ github.ref_name }}"
+
+      - name: github env
+        run: |
+          echo "Course=github-actions" >> $GITHUB_ENV
+          echo "Duration=5hours" >> $GITHUB_ENV
+
+      - name: print github env
+        run: |
+          echo "Course: $Course"
+          echo "Duration: $Duration"
