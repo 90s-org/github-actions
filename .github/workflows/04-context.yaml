@@ -16,3 +16,8 @@ jobs:
           echo "Project: $project"
           echo "Component: $component"
           echo "Environment: $environment"
+
+      - name: print context
+        run: |
+          echo "${{ toJson(github) }}"
+          echo "branch name: ${{ github.ref_name }}"
