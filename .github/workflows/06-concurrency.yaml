@@ -12,7 +12,9 @@ jobs:
     steps:
       - name: main branch
         if: github.ref_name == 'main'
-        run: echo "This one executes if branch is main" # The command to execute
+        run: |
+          sleep 30
+          echo "This one executes if branch is main" # The command to execute
 
       - name: feature branch
         if: github.ref_name == 'feature-*'
